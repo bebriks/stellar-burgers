@@ -11,19 +11,11 @@ export const Feed: FC = () => {
     dispatch(getAllFeeds());
   }, []);
   const orders: TOrder[] = useSelector(getOrdersFeeds);
-
   if (!orders.length) {
     return <Preloader />;
   }
-  const handleGetAllFeeds = () => {
+  const handleGetFeeds = () => {
     dispatch(getAllFeeds());
   };
-  return (
-    <FeedUI
-      orders={orders}
-      handleGetFeeds={() => {
-        handleGetAllFeeds;
-      }}
-    />
-  );
+  return <FeedUI orders={orders} handleGetFeeds={handleGetFeeds} />;
 };
