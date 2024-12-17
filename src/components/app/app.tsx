@@ -6,7 +6,8 @@ import {
   Profile,
   ProfileOrders,
   Register,
-  ResetPassword
+  ResetPassword,
+  NotFound404
 } from '@pages';
 import '../../index.css';
 import styles from './app.module.css';
@@ -94,7 +95,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-        <Route path='*' element='NotFound404' />
+        <Route path='*' element={<NotFound404 />} />
       </Routes>
       {back && (
         <Routes>
