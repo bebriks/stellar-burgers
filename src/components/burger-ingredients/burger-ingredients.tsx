@@ -3,12 +3,8 @@ import { useInView } from 'react-intersection-observer';
 
 import { TTabMode } from '@utils-types';
 import { BurgerIngredientsUI } from '../ui/burger-ingredients';
-import { useSelector, useStore } from 'react-redux';
-import {
-  getIngredientsState,
-  getIngredientsLoadingState,
-  getIngredients
-} from '../../services/slices/ingredients-slice';
+import { useSelector } from 'react-redux';
+import { getIngredientsState } from '../../services/slices/ingredients-slice';
 import { Preloader } from '../ui/preloader';
 
 export const BurgerIngredients: FC = () => {

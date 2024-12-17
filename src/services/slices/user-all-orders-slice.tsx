@@ -13,9 +13,6 @@ export const userOrdersSlice = createSlice({
   name: 'orders',
   initialState,
   reducers: {},
-  selectors: {
-    listOfOrders: (state) => state.orders
-  },
   extraReducers: (builder) => {
     builder
       .addCase(getUserOrders.fulfilled, (state, action) => {
@@ -28,6 +25,9 @@ export const userOrdersSlice = createSlice({
       .addCase(getUserOrders.rejected, (state) => {
         state.isLoading = false;
       });
+  },
+  selectors: {
+    listOfOrders: (state) => state.orders
   }
 });
 

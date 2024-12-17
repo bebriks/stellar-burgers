@@ -5,7 +5,7 @@ import {
   registerUserApi,
   updateUserApi
 } from '@api';
-import { PayloadAction, createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { TUser } from '@utils-types';
 
 const initialState = {
@@ -26,12 +26,6 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {},
-  selectors: {
-    isAuthCheckedSelector: (state) => state.isAuthChecked,
-    getUser: (state) => state.user,
-    getName: (state) => state.user.name,
-    getError: (state) => state.error
-  },
   extraReducers: (builder) => {
     builder
       .addCase(register.fulfilled, (state, action) => {
@@ -84,6 +78,12 @@ export const userSlice = createSlice({
       state.isAuthChecked = false;
       state.user = { email: '', name: '' };
     });
+  },
+  selectors: {
+    isAuthCheckedSelector: (state) => state.isAuthChecked,
+    getUser: (state) => state.user,
+    getName: (state) => state.user.name,
+    getError: (state) => state.error
   }
 });
 

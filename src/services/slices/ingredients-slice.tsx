@@ -17,11 +17,6 @@ export const ingredientsSlice = createSlice({
   name: 'ingredients',
   initialState,
   reducers: {},
-  selectors: {
-    getIngredientsState: (state) => state,
-    getIngredientsLoadingState: (state) => state.loading,
-    getIngredients: (state) => state.ingredients
-  },
   extraReducers: (builder) => {
     builder
       .addCase(getIngredientsList.pending, (state) => {
@@ -36,6 +31,11 @@ export const ingredientsSlice = createSlice({
         state.loading = false;
         state.ingredients = action.payload;
       });
+  },
+  selectors: {
+    getIngredientsState: (state) => state,
+    getIngredientsLoadingState: (state) => state.loading,
+    getIngredients: (state) => state.ingredients
   }
 });
 

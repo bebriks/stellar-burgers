@@ -16,10 +16,6 @@ export const newOrderSlice = createSlice({
   reducers: {
     resetOrder: () => initialState
   },
-  selectors: {
-    getOrderRequest: (state) => state.orderRequest,
-    getOrderModalData: (state) => state.orderModalData
-  },
   extraReducers: (builder) => {
     builder
       .addCase(newOrder.fulfilled, (state, action) => {
@@ -32,6 +28,10 @@ export const newOrderSlice = createSlice({
       .addCase(newOrder.pending, (state) => {
         state.orderRequest = true;
       });
+  },
+  selectors: {
+    getOrderRequest: (state) => state.orderRequest,
+    getOrderModalData: (state) => state.orderModalData
   }
 });
 export const { resetOrder } = newOrderSlice.actions;

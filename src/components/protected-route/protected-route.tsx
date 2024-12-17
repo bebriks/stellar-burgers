@@ -39,33 +39,3 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
 };
 
 export default ProtectedRoute;
-
-/* import React from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
-
-import { useSelector } from '../../services/store';
-import { isAuthCheckedSelector } from '../../services/slices/user-slice';
-
-type ProtectedRouteProps = {
-  nonAuth?: boolean;
-  children: React.ReactElement;
-};
-
-export const ProtectedRoute = ({
-  nonAuth = false,
-  children
-}: ProtectedRouteProps) => {
-  const isAuthChecked = useSelector(isAuthCheckedSelector);
-  const location = useLocation();
-
-  if (!nonAuth && !isAuthChecked) {
-    return <Navigate replace to='/login' state={{ from: location }} />;
-  }
-
-  if (nonAuth && isAuthChecked) {
-    const fromPage = location.state?.from || { pathname: '/' };
-
-    return <Navigate replace to={fromPage} />;
-  }
-  return children;
-}; */
