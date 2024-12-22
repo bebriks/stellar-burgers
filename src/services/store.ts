@@ -11,12 +11,12 @@ import { userSlice } from './slices/user-slice';
 import { feedsSlice } from './slices/feeds-slice';
 import { userOrdersSlice } from './slices/user-all-orders-slice';
 
-const rootReducer = {
+export const rootReducer = {
   [ingredientsSlice.name]: ingredientsSlice.reducer,
   [constructorSlice.name]: constructorSlice.reducer,
+  [feedsSlice.name]: feedsSlice.reducer,
   [newOrderSlice.name]: newOrderSlice.reducer,
   [userSlice.name]: userSlice.reducer,
-  [feedsSlice.name]: feedsSlice.reducer,
   [userOrdersSlice.name]: userOrdersSlice.reducer
 };
 

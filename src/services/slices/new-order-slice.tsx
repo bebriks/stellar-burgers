@@ -1,4 +1,4 @@
-import { orderBurgerApi } from '@api';
+import { orderBurgerApi } from '../../utils/burger-api';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { TOrder } from '@utils-types';
 
@@ -23,6 +23,7 @@ export const newOrderSlice = createSlice({
         state.orderModalData = action.payload.order;
       })
       .addCase(newOrder.rejected, (state, action) => {
+        state.orderRequest = false;
         state.error = action.error.message;
       })
       .addCase(newOrder.pending, (state) => {

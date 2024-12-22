@@ -51,6 +51,7 @@ export const AppHeaderUI: FC<TAppHeaderUIProps> = ({ userName }) => {
           <NavLink
             to='/profile'
             className={({ isActive }) => getClassName(isActive)}
+            data-cy='profile-link'
           >
             <ProfileIcon type={'primary'} className={styles.icon} />
             <p className='text text_type_main-default ml-2'>
